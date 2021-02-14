@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: #A5B2D3;
+    padding: .5em;
+    height: 100vh;
+    text-align:center;
+    background: #303A52;
+    font-family: 'Nunito', sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header svg {
+    width: 1.5em;
+    cursor: pointer;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a.logo {
+    font-weight: bold;
+    margin: 0 1em;
+}
+
+a.cta-btn {
+    margin-left: auto;
+    background: #FC85AE;
+    display: inline-block;
+    color: #303A52;
+    font-weight: bold;
+    font-size: .9em;
+    padding: .2em .4em;
+    border-radius: .2em;
+}
+
+/* Navigation */
+
+
+nav {
+    position: fixed;
+    background: #2C354A;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    width: 80%;
+    visibility: hidden;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: all .3s;
+    text-align: left;
+}
+
+
+nav p {
+    margin-bottom: 0;
+}
+
+nav svg {
+    cursor: pointer;
+    width: 1em;
+}
+
+nav ul li a {
+    display: block;
+    font-size: 1.2em;
+    padding: .8em 1em;
+}
+
+.selected {
+    background: #9E579D;
+}
+
+.open-nav {
+    visibility: unset;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* Main Section */
+
+
+h1 {
+    color: white;
+    margin-top: 1em;
+}
+
+.panel {
+    background: #39445F;
+    border-radius: .3em;
+    padding: .5em 1em;
+    margin-bottom: 2em;
+}
+
+h3 {
+    color: #FC85AE;
+    margin: 0;
+    font-size: unset;
+}
+
+ul.data li p {
+    color: white;
+    font-weight: bold;
+    font-size: 1.8em;
+    margin: .3em 0 1em;
+}
+
+ul.data li:last-child p {
+    margin-bottom: 0;
+}
+ul.secondary {
+    margin-top: 2em;
+}
+ul.secondary li p {
+    font-size: 1.3em;
+}
+
+main {
+    border: unset;
+}
+
+p {
+  line-height: 1.4em;
+}
+
+.inner-wrapper {
+  padding: 1em;
+}
+
+
+/* Large Phones */
+
+@media (min-width: 420px) {
+    body {
+        padding: 1em;
+        text-align: left;
+    }
+    ul.data {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    ul.data li {
+        flex: 0 0 50%;
+    }
+}
+
+@media (min-width: 550px) {
+    ul.data {
+        justify-content: center;
+    }
+    .panel ul.data li {
+        flex: 0 0 33%;
+    }
+    .panel ul.data li p {
+        margin-bottom: 0;
+    }
+    nav {
+        width: 40%;
+    }
+}
+
+@media (min-width: 720px) {
+    body {
+        padding: 1.5em;
+    }
+    .columns {
+        display: flex;
+    }
+    .col {
+        flex: 0 0 48%;
+    }
+    .secondary {
+        margin-left: 3em;
+    }
+    ul.secondary {
+        margin-top: 0;
+    }
+    nav {
+        width: 30%;
+    }
+    
+}
+
+@media (min-width: 850px) {
+    body {
+        display: grid;
+        grid-template-columns: 200px auto;
+        grid-template-rows: 70px auto;
+        grid-template-areas:
+            "sidebar header"
+            "sidebar main";
+        padding: 0;
+    }
+    
+    header, main {
+        padding: 1.5em;
+    }
+    
+    nav {
+        grid-area: sidebar;
+        opacity: 1;
+        visibility: unset;
+        transform: translateX(0);
+        width: 100%;
+        position: unset;
+        
+    }
+    
+    header {
+        grid-area: header;
+    }
+    
+    main {
+        grid-area: main;
+    }
+    
+    a.logo {
+        margin: 0;
+    }
+    svg {
+        display: none;
+    }
+}
